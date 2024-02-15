@@ -26,7 +26,7 @@ fn ball() {
       ops.random(OInt(-220), OInt(220)),
       ops.random(OInt(-160), OInt(160)),
     )
-    |> motion.set_diretion(ops.random(OInt(0), OInt(359)))
+    |> motion.set_direction(ops.random(OInt(0), OInt(359)))
     |> c(
       control.forever()
       |> motion.move(OInt(10))
