@@ -24,12 +24,12 @@ fn ball() {
     events.on_flag()
     |> motion.position(
       ops.random(OInt(-220), OInt(220)),
-      ops.random(OInt(-160), OInt(160)),
+      ops.random(OInt(0), OInt(160)),
     )
     |> motion.set_direction(ops.random(OInt(0), OInt(359)))
     |> c(
       control.forever()
-      |> motion.move(OInt(10))
+      |> motion.move(OInt(5))
       |> motion.bounce_on_edge(),
     ),
   )
