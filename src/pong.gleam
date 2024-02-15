@@ -1,5 +1,12 @@
-import gleam/io
+import mroew/project
+import mroew/sprite
 
 pub fn main() {
-  io.println("Hello from pong!")
+  project.project(stage())
+  |> project.export("pong.sb3")
+}
+
+fn stage() {
+  sprite.sprite("Stage")
+  |> sprite.costume("Blank", "./assets/blank.svg")
 }
