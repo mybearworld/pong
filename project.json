@@ -1,0 +1,147 @@
+{
+  "targets": [
+    {
+      "blocks": {},
+      "costumes": [
+        {
+          "name": "Blank",
+          "bitmapResolution": 1,
+          "dataFormat": "svg",
+          "assetId": "3339a2953a3bf62bb80e54ff575dbced",
+          "md5ext": "3339a2953a3bf62bb80e54ff575dbced.svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "variables": {},
+      "isStage": true,
+      "name": "Stage",
+      "volume": 100,
+      "layerOrder": 0,
+      "visible": true,
+      "x": 0,
+      "y": 0,
+      "size": 100,
+      "direction": 90,
+      "draggable": false,
+      "rotationStyle": "all around"
+    },
+    {
+      "blocks": {
+        "0s0": {
+          "next": "0s1",
+          "opcode": "event_whenflagclicked",
+          "topLevel": true,
+          "x": 0,
+          "y": 0,
+          "inputs": {},
+          "fields": {},
+          "shadow": false
+        },
+        "0s1": {
+          "next": "0s2",
+          "opcode": "motion_gotoxy",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": {
+            "X": [3, [4, "0"], "0s1o1"],
+            "Y": [3, [4, "0"], "0s1o2"]
+          },
+          "fields": {}
+        },
+        "0s1o1": {
+          "next": null,
+          "opcode": "operator_random",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "FROM": [1, [4, "-220"]], "TO": [1, [4, "220"]] },
+          "fields": {}
+        },
+        "0s1o2": {
+          "next": null,
+          "opcode": "operator_random",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "FROM": [1, [4, "-160"]], "TO": [1, [4, "160"]] },
+          "fields": {}
+        },
+        "0s2": {
+          "next": "0s3",
+          "opcode": "motion_pointtowards",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "TOWARDS": [3, [4, "90"], "0s2o1"] },
+          "fields": {}
+        },
+        "0s2o1": {
+          "next": null,
+          "opcode": "operator_random",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "FROM": [1, [4, "0"]], "TO": [1, [4, "359"]] },
+          "fields": {}
+        },
+        "0s3": {
+          "next": "0s4",
+          "opcode": "control_forever",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "SUBSTACK": [2, "0s3u0"] },
+          "fields": {}
+        },
+        "0s3u0": {
+          "next": "0s3u1",
+          "opcode": "motion_movesteps",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": { "STEPS": [1, [4, "10"]] },
+          "fields": {}
+        },
+        "0s3u1": {
+          "next": "0s3u2",
+          "opcode": "motion_ifonedgebounce",
+          "topLevel": false,
+          "x": 0,
+          "y": 0,
+          "inputs": {},
+          "fields": {}
+        }
+      },
+      "costumes": [
+        {
+          "name": "Ball",
+          "bitmapResolution": 1,
+          "dataFormat": "svg",
+          "assetId": "dc9299f0d32710193776170d5eb4dcd8",
+          "md5ext": "dc9299f0d32710193776170d5eb4dcd8.svg",
+          "rotationCenterX": 0,
+          "rotationCenterY": 0
+        }
+      ],
+      "sounds": [],
+      "variables": {},
+      "isStage": false,
+      "name": "Ball",
+      "volume": 100,
+      "layerOrder": 1,
+      "visible": true,
+      "x": 0,
+      "y": 0,
+      "size": 100,
+      "direction": 90,
+      "draggable": false,
+      "rotationStyle": "all around"
+    }
+  ],
+  "extensions": [],
+  "monitors": [],
+  "meta": { "semver": "3.0.0", "vm": "2.1.1", "agent": "Mröw" }
+}
