@@ -5,10 +5,12 @@ import mroew/blocks/control
 import mroew/blocks/events
 import mroew/blocks/motion
 import mroew/blocks/ops
+import mroew/blocks/sensing
 
 pub fn main() {
   project.project(stage())
   |> project.add_sprite(ball())
+  |> project.add_sprite(paddle())
   |> project.export("pong.sb3")
 }
 
@@ -31,6 +33,18 @@ fn ball() {
       control.forever()
       |> motion.move(OInt(5))
       |> motion.bounce_on_edge(),
+    ),
+  )
+}
+
+fn paddle() {
+  sprite.sprite("Paddle")
+  |> sprite.costume("Paddle", "./assets/paddle.svg")
+  |> sprite.blocks(
+    events.on_flag()
+    |> c(
+      control.forever()
+      |> motion.position(sensing.mouse_x(), OInt(-160)),
     ),
   )
 }
