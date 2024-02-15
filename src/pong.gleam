@@ -1,7 +1,7 @@
 import mroew/project
 import mroew/sprite
 import mroew/blocks.{OInt, OString, c}
-import mroew/blocks/control
+import mroew/blocks/control.{All}
 import mroew/blocks/events
 import mroew/blocks/motion
 import mroew/blocks/ops
@@ -35,7 +35,7 @@ fn ball() {
       |> motion.bounce_on_edge()
       |> c(
         control.cond(sensing.touching_sprite(OString("Paddle")))
-        |> control.stop_all(),
+        |> control.stop(All),
       ),
     ),
   )
