@@ -16,12 +16,12 @@ pub fn main() {
 
 fn stage() {
   sprite.sprite("Stage")
-  |> sprite.costume("Blank", "./assets/blank.svg")
+  |> sprite.costume("Blank", "./assets/blank.svg", 0, 0)
 }
 
 fn ball() {
   sprite.sprite("Ball")
-  |> sprite.costume("Ball", "./assets/ball.svg")
+  |> sprite.costume("Ball", "./assets/ball.svg", 12, 12)
   |> sprite.blocks(
     events.on_flag()
     |> motion.position(
@@ -50,7 +50,7 @@ fn ball() {
 
 fn paddle() {
   sprite.sprite("Paddle")
-  |> sprite.costume("Paddle", "./assets/paddle.svg")
+  |> sprite.costume("Paddle", "./assets/paddle.svg", 68, 8)
   |> sprite.blocks(
     events.on_flag()
     |> c(
