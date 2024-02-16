@@ -4,6 +4,7 @@ import mroew/blocks.{OInt, OString, c}
 import mroew/blocks/control.{All}
 import mroew/blocks/events
 import mroew/blocks/motion
+import mroew/blocks/looks
 import mroew/blocks/ops
 import mroew/blocks/sensing
 
@@ -11,12 +12,22 @@ pub fn main() {
   project.project(stage())
   |> project.add_sprite(ball())
   |> project.add_sprite(paddle())
+  |> project.add_sprite(thumbnail())
   |> project.export("pong.sb3")
 }
 
 fn stage() {
   sprite.sprite("Stage")
   |> sprite.costume("Blank", "./assets/blank.svg", 0, 0)
+}
+
+fn thumbnail() {
+  sprite.sprite("Thumbnail")
+  |> sprite.costume("Thumbnail", "./assets/thumbnail.svg", 480, 360)
+  |> sprite.blocks(
+    events.on_flag()
+    |> looks.hide(),
+  )
 }
 
 fn ball() {
