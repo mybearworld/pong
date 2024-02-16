@@ -31,7 +31,7 @@ fn ball() {
     |> motion.set_direction(ops.random(OInt(0), OInt(359)))
     |> c(
       control.forever()
-      |> motion.move(OInt(5))
+      |> motion.move(OInt(8))
       |> motion.bounce_on_edge()
       |> c(
         control.cond(sensing.touching_sprite(OString("Paddle")))
