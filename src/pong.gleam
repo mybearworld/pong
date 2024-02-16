@@ -35,6 +35,13 @@ fn ball() {
       |> motion.bounce_on_edge()
       |> c(
         control.cond(sensing.touching_sprite(OString("Paddle")))
+        |> motion.turn(OInt(60)),
+      )
+      |> c(
+        control.cond(
+          motion.y()
+          |> ops.lt(OInt(-165)),
+        )
         |> control.stop(All),
       ),
     ),
